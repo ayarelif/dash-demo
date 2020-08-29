@@ -18,7 +18,7 @@ import dash_html_components as html
 """
 fa_bootstrap = "https://stackpath.bootstrapcdn.com/font-awesome/"
 ext_style = [
-    dbc.themes.DARKLY,
+    dbc.themes.SIMPLEX,
     f"{fa_bootstrap}4.7.0/css/font-awesome.min.css"
 ]
 
@@ -31,7 +31,9 @@ meta_tags = [{'name':'viewport',
 """
     Define app as dash.Dash object. Set external stylesheets and meta tags.
 """
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__,
+                # external_stylesheets=external_stylesheets,
                 external_stylesheets=ext_style,
                 meta_tags=meta_tags)
 app.config.suppress_callback_exceptions = True

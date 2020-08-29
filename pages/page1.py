@@ -8,19 +8,17 @@ from dash.dependencies import Input, Output
 from app import app
 
 # Imports for model
-import pickle
-import numpy as np
-# import category_encoders as ce
-import sklearn
-# from sklearn.impute import SimpleImputer
-# from sklearn.ensemble import RandomForestClassifier
-# from sklearn.pipeline import make_pipeline
-# from sklearn.preprocessing import StandardScaler
 
-# Instantiate the model
-from joblib import load
-#with open("./assets/model.pkl","rb") as f:
-#  pipeline = pickle.load(f)
+import numpy as np
+import category_encoders as ce
+import sklearn
+from sklearn.impute import SimpleImputer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from model import model
+
+
 """
     Page 1
 """
@@ -30,7 +28,15 @@ column_1 = dbc.Col([
         """
             This is Column One!
         """
-    )],
+    ),dcc.Dropdown(
+        id='demo-dropdown',
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': 'Montreal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value='NYC'
+    ),],
     md=4)
 
 column_2 = dbc.Col([

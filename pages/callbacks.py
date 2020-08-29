@@ -9,12 +9,8 @@ from app import app
 import pickle
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from model import model
 
-
-# Instantiate the model
-# infile = open("./assets/model.pkl", "rb")
-# model = pickle.load(infile)
-# infile.close()
 
 """
     Basic Callbacks:
@@ -90,17 +86,17 @@ element_2 = dbc.Col([
     ])
 ])
 
-@app.callback(
-    Output("prediction", "children"),
-    [Input("input1", "value"),
-     Input("input2", "value"),
-     Input("input3", "value")]
-)
-def get_prediction(input1, input2, input3):
-    """
-        Return prediction for given inputs
-    """
-    return model.predict(np.array([[input1, input2, input3]]))
+# @app.callback(
+#     Output("prediction", "children"),
+#     [Input("input1", "value"),
+#      Input("input2", "value"),
+#      Input("input3", "value")]
+# )
+# def get_prediction(input1, input2, input3):
+#     """
+#         Return prediction for given inputs
+#     """
+#     return model.predict(np.array([[input1, input2, input3]]))
 
 @app.callback(
     Output("dropdown-value", "children"),
@@ -112,3 +108,4 @@ def dropdown_selection(input1):
 layout = dbc.Row([element_1, element_2])
 
 # END
+
