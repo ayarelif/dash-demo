@@ -12,9 +12,9 @@ from sklearn.linear_model import LogisticRegression
 
 
 # Instantiate the model
-infile = open("./assets/model.pkl", "rb")
-model = pickle.load(infile)
-infile.close()
+# infile = open("./assets/model.pkl", "rb")
+# model = pickle.load(infile)
+# infile.close()
 
 """
     Basic Callbacks:

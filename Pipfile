@@ -9,14 +9,12 @@ verify_ssl = true
 dash = "*"
 dash-bootstrap-components = "*"
 pandas = "*"
-scikit-learn = "*"
+scikit-learn = "==0.22.2.post1"
 plotly = "*"
 gunicorn = "*"
 matplotlib = "*"
-shap = "*"
-seaborn = "*"
-category-encoders = "*"
-ipython = "*"
+joblib = "==0.16.0"
+category-encoders = "==2.2.2"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
